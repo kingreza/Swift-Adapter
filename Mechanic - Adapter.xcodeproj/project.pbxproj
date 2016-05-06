@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5707979A1CDC71A600EE750B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570797991CDC71A600EE750B /* main.swift */; };
+		570797A21CDC722400EE750B /* quote_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570797A11CDC722400EE750B /* quote_api.swift */; };
+		570797A41CDC727F00EE750B /* part.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570797A31CDC727F00EE750B /* part.swift */; };
+		570797A61CDC746400EE750B /* original_quote_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570797A51CDC746400EE750B /* original_quote_api.swift */; };
+		570797A81CDC7BD700EE750B /* canadian_quote_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570797A71CDC7BD700EE750B /* canadian_quote_api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,10 @@
 /* Begin PBXFileReference section */
 		570797961CDC71A600EE750B /* Mechanic - Adapter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Mechanic - Adapter"; sourceTree = BUILT_PRODUCTS_DIR; };
 		570797991CDC71A600EE750B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		570797A11CDC722400EE750B /* quote_api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = quote_api.swift; sourceTree = "<group>"; };
+		570797A31CDC727F00EE750B /* part.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = part.swift; sourceTree = "<group>"; };
+		570797A51CDC746400EE750B /* original_quote_api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = original_quote_api.swift; sourceTree = "<group>"; };
+		570797A71CDC7BD700EE750B /* canadian_quote_api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = canadian_quote_api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 			isa = PBXGroup;
 			children = (
 				570797991CDC71A600EE750B /* main.swift */,
+				570797A11CDC722400EE750B /* quote_api.swift */,
+				570797A31CDC727F00EE750B /* part.swift */,
+				570797A51CDC746400EE750B /* original_quote_api.swift */,
+				570797A71CDC7BD700EE750B /* canadian_quote_api.swift */,
 			);
 			path = "Mechanic - Adapter";
 			sourceTree = "<group>";
@@ -72,6 +84,7 @@
 				570797921CDC71A400EE750B /* Sources */,
 				570797931CDC71A400EE750B /* Frameworks */,
 				570797941CDC71A400EE750B /* CopyFiles */,
+				570797A01CDC71C500EE750B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -114,12 +127,32 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		570797A01CDC71C500EE750B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		570797921CDC71A400EE750B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5707979A1CDC71A600EE750B /* main.swift in Sources */,
+				570797A41CDC727F00EE750B /* part.swift in Sources */,
+				570797A61CDC746400EE750B /* original_quote_api.swift in Sources */,
+				570797A81CDC7BD700EE750B /* canadian_quote_api.swift in Sources */,
+				570797A21CDC722400EE750B /* quote_api.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
