@@ -8,7 +8,7 @@
 
 import Foundation
 
-/* We assume we do not have access to the APIR's tax rate or laborRatePerHour.
+/* We assume we do not have access to the API's tax rate or laborRatePerHour.
  * For all we know these values are stored in some legacy code deep inside some old server
  * We cannot access or change it. */
 
@@ -25,19 +25,30 @@ print(originalAPI.totalCost)
 var canadianAPI = CanadianQuoteAPI(target: originalAPI,
                                    tax: 0.20,
                                    laborRatePerHour: 50.00,
-                                   cndToUsd: 0.75,
-                                   usdToCdn: 1.2)
+                                   cadToUsd: 0.75,
+                                   usdToCad: 1.2)
+//Print total cost in CAD
 print(canadianAPI.totalCost)
+
+//Add part through Canadian APIT, price will be in CAD
 canadianAPI.addPart(Part(partId: 63, name: "Regular Oil", price: 5.00))
+
+//Print total cost in CAD
 print(canadianAPI.totalCost)
+
+//Print total cost in USD
 print(originalAPI.totalCost)
+
+//Print total cost of parts in USD
 print(originalAPI.partCost)
 
-
+//Print car mileage in miles and km
 print("Mileage of the car is \(originalAPI.carMileage) Miles")
 print("Mileage of the car is \(canadianAPI.carMileage) Kilometers")
 
+//Change cars mileage through Canadian api, new value is in KM
 canadianAPI.carMileage = 10000
 
+//Print car mileage in miles and km
 print("Mileage of the car is \(originalAPI.carMileage) Miles")
 print("Mileage of the car is \(canadianAPI.carMileage) Kilometers")

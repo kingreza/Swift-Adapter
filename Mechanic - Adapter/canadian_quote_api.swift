@@ -14,9 +14,9 @@ class CanadianQuoteAPI: QuoteAPI {
 
   let tax: Double
 
-  let cndToUsd: Double
+  let cadToUsd: Double
 
-  let usdToCdn: Double
+  let usdToCad: Double
 
   var laborInMinutes: Int = 0
 
@@ -24,14 +24,14 @@ class CanadianQuoteAPI: QuoteAPI {
 
   init(target: QuoteAPI, tax: Double,
       laborRatePerHour: Double,
-      cndToUsd: Double,
-      usdToCdn: Double) {
+      cadToUsd: Double,
+      usdToCad: Double) {
 
     self.tax = tax
     self.laborRatePerHour = laborRatePerHour
     self.target = target
-    self.cndToUsd = cndToUsd
-    self.usdToCdn = usdToCdn
+    self.cadToUsd = cadToUsd
+    self.usdToCad = usdToCad
   }
 
   var carMileage: Int {
@@ -45,13 +45,13 @@ class CanadianQuoteAPI: QuoteAPI {
 
   var laborCost: Double {
     get {
-      return ((Double(target.laborInMinutes) / 60.0) * self.laborRatePerHour) * usdToCdn
+      return ((Double(target.laborInMinutes) / 60.0) * self.laborRatePerHour) * usdToCad
     }
   }
 
   var partCost: Double {
     get {
-      return target.partCost * usdToCdn
+      return target.partCost * usdToCad
     }
   }
 
@@ -62,7 +62,7 @@ class CanadianQuoteAPI: QuoteAPI {
   }
 
   func addPart(part: Part) {
-    part.price = part.price * cndToUsd
+    part.price = part.price * cadToUsd
     target.addPart(part)
   }
 
