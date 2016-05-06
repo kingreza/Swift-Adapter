@@ -26,7 +26,7 @@ class CanadianQuoteAPI: QuoteAPI {
       laborRatePerHour: Double,
       cndToUsd: Double,
       usdToCdn: Double) {
-        
+
     self.tax = tax
     self.laborRatePerHour = laborRatePerHour
     self.target = target
