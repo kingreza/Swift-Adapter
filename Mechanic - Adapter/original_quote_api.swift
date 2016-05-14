@@ -10,21 +10,21 @@ import Foundation
 
 class OriginalQuoteAPI: QuoteAPI {
 
-  internal let tax: Double
+  let tax: Double = 0.20
 
-  internal let laborRatePerHour: Double
+  let laborRatePerHour: Double =  50.00
 
-  var laborInMinutes: Int = 0
+  var laborInMinutes: Int
 
-  var carMileage: Int = 0
+  var carMileage: Int
 
   var parts: Set<Part>
 
-   init(tax: Double, laborRatePerHour: Double) {
-    self.tax = tax
+   init() {
+    self.laborInMinutes = 0
+    self.carMileage = 0
     self.parts = Set<Part>()
-    self.laborRatePerHour = laborRatePerHour
-  }
+   }
 
   var laborCost: Double {
     get {

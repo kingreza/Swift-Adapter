@@ -14,15 +14,15 @@ protocol QuoteAPI {
 
   var laborRatePerHour: Double {get}
 
-  var laborInMinutes: Int {get set}
-
-  var laborCost: Double {get}
-
-  var carMileage: Int {get set}
-
   var partCost: Double {get}
 
   var totalCost: Double {get}
+
+  var laborCost: Double {get}
+
+  var laborInMinutes: Int {get set}
+
+  var carMileage: Int {get set}
 
   func addPart(part: Part)
 

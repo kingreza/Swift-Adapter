@@ -8,11 +8,7 @@
 
 import Foundation
 
-/* We assume we do not have access to the API's tax rate or laborRatePerHour.
- * For all we know these values are stored in some legacy code deep inside some old server
- * We cannot access or change it. */
-
-var originalAPI = OriginalQuoteAPI(tax: 0.20, laborRatePerHour: 50.00)
+var originalAPI = OriginalQuoteAPI()
 
 // We add two parts, set how long it takes to do the job and add the car's mileage
 originalAPI.addPart(Part(partId: 15, name: "Brade Fluid", price: 20.00))

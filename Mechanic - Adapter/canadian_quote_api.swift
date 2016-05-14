@@ -18,8 +18,6 @@ class CanadianQuoteAPI: QuoteAPI {
 
   let usdToCad: Double
 
-  var laborInMinutes: Int = 0
-
   var laborRatePerHour: Double
 
   init(target: QuoteAPI, tax: Double,
@@ -43,9 +41,19 @@ class CanadianQuoteAPI: QuoteAPI {
     }
   }
 
+  var laborInMinutes: Int {
+    get {
+      return target.laborInMinutes
+    }
+
+    set(newValue) {
+      target.laborInMinutes = newValue
+    }
+  }
+
   var laborCost: Double {
     get {
-      return ((Double(target.laborInMinutes) / 60.0) * self.laborRatePerHour) * usdToCad
+      return ((Double(target.laborInMinutes) / 60.0) * self.laborRatePerHour)
     }
   }
 
