@@ -11,10 +11,11 @@ import Foundation
 var originalAPI = OriginalQuoteAPI()
 
 // We add two parts, set how long it takes to do the job and add the car's mileage
-originalAPI.addPart(Part(partId: 15, name: "Brade Fluid", price: 20.00))
+originalAPI.addPart(Part(partId: 15, name: "Brake Fluid", price: 20.00))
 originalAPI.addPart(Part(partId: 8, name: "Filters", price: 10.00))
 originalAPI.laborInMinutes = 60
 originalAPI.carMileage = 11000
+print("original API total cost:")
 print(originalAPI.totalCost)
 
 
@@ -23,18 +24,23 @@ var canadianAPI = CanadianQuoteAPI(target: originalAPI,
                                    laborRatePerHour: 50.00,
                                    cadToUsd: 0.75,
                                    usdToCad: 1.2)
+print("Canadian API total cost with a 1.2 USD to CAD exchange rate:")
 //Print total cost in CAD
 print(canadianAPI.totalCost)
 
-//Add part through Canadian APIT, price will be in CAD
+//Add part through Canadian API, price will be in CAD
 canadianAPI.addPart(Part(partId: 63, name: "Regular Oil", price: 5.00))
 
-//Print total cost in CAD
-print(canadianAPI.totalCost)
-
+print("Original API total cost after a $5 CAD part is added:")
 //Print total cost in USD
 print(originalAPI.totalCost)
 
+print("Canadian API total cost after a $5 CAD part is added:")
+//Print total cost in CAD
+print(canadianAPI.totalCost)
+
+
+print("Original API part cost after a $5 CAD part is added:")
 //Print total cost of parts in USD
 print(originalAPI.partCost)
 
